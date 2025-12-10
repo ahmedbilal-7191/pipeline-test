@@ -1,1 +1,13 @@
+name: My Testing Workflow
+on: [push] # Trigger on every push to any branch
 
+jobs:
+  build:
+    runs-on: ubuntu-latest # Run on an Ubuntu-latest GitHub-hosted runner
+
+    steps:
+      - uses: actions/checkout@v3 # Checkout the repository code
+      - name: Greet User
+        run: echo "Hello from GitHub Actions!" # Run a simple command
+      - name: Print Docekr Version
+        run: docker --version
